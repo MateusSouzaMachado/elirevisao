@@ -70,4 +70,16 @@ public class Evento {
     @ManyToMany
     @JoinTable(name = "evento_grupo")
     private List<GrupoTrabalho> grupos = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(name = "evento_categoria")
+    private List<Categoria> categorias = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "participante_id")
+    private Participante participante;
+
+    @ManyToOne
+    @JoinColumn(name = "relatorio_id")
+    private Relatorio relatorio;
 }

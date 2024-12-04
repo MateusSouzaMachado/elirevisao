@@ -7,6 +7,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 
 import com.senai.eli.Enum.Sexo;
+import com.senai.eli.Validator.Telefone.Telefone;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,17 +32,17 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(name = "sexo", nullable = false)
     @ColumnDefault("3")
     private Sexo sexo = Sexo.NAO_INFORMADO;
 
     @Column(name = "email", nullable = false)
     @Email
-    private String email;
+    private Email email;
 
-    @Column(name = "telefone", length = 14)
-    @Pattern(regexp = "(\\d{2}) \\d{4,5}-\\{4}")
+    @Column(name = "telefone", length = 15)
+    @Telefone(apenasCelular = true, required = false)
     private String telefone;
 
     @Column(name = "nascimento", nullable = false)
