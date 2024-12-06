@@ -2,6 +2,8 @@
 package com.senai.eli.Model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.annotations.ColumnDefault;
 
@@ -16,9 +18,10 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,4 +50,8 @@ public class Usuario {
 
     @Column(name = "nascimento", nullable = false)
     private LocalDate nascimento;
+
+    @ManyToMany
+    @JoinTable(name = "usuarios_categorias")
+    private List<Categoria> grupos = new ArrayList<>();
 }

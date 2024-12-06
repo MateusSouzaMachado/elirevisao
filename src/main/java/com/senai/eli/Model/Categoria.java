@@ -29,6 +29,9 @@ public class Categoria {
     @ManyToMany(mappedBy = "categorias")
     private List<Evento> eventos = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "categorias")
+    private List<Categoria> categorias = new ArrayList<>();
+
    
 
 

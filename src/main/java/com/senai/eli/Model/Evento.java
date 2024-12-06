@@ -62,7 +62,6 @@ public class Evento {
     @JoinTable(name = "evento_calendario")
     private List<Calendario> calendarios = new ArrayList<>();
 
-
     @ManyToOne
     @JoinColumn(name = "local_id")
     private Local local;
