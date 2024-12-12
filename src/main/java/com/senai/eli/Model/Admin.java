@@ -1,5 +1,7 @@
 package com.senai.eli.Model;
 
+import com.senai.eli.Validator.Usuario.Usuario;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,7 +32,8 @@ public class Admin {
     @Column(name = "senha")
     private String senha;
 
-    @Column(name = "usuario")
+    @Column(name = "usuario", nullable = false, unique = true)
+    @Usuario
     private String usuario;
 
 
