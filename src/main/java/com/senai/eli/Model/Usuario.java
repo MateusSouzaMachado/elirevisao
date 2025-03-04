@@ -42,7 +42,7 @@ public class Usuario {
 
     @Column(name = "email", nullable = false)
     @Email
-    private Email email;
+    private String email;
 
     @Column(name = "telefone", length = 15)
     @Telefone(apenasCelular = true, required = false)

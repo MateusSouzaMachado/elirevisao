@@ -27,7 +27,7 @@ public class Admin {
     private String ultimoAcesso;
 
     @Column(name = "email", nullable = false)
-    private Email email;
+    private String email;
 
     @Column(name = "senha")
     private String senha;
